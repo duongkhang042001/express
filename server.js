@@ -35,5 +35,7 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res) => {
-    return res.render('home/index')
+    return res.render('home/index', {
+        title: "Trang chủ"
+    })
 })
