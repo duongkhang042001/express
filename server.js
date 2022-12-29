@@ -36,7 +36,7 @@ redis.connect()
 mongoose.connect()
 
 app.listen(port, () => {
-    console.log(`[+] NodeJS app running at localhost: ${port}!`)
+    console.log(`⚡ [+] NodeJS app running at localhost: ${port}!`)
 })
 
 app.get('/', (req, res) => {

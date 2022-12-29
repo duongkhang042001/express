@@ -1,15 +1,12 @@
 const mongoose = require('mongoose');
 
 class Database {
-
     connection = mongoose.connection;
-
     constructor() {
-
         try {
             this.connection
-                .on('open', console.info.bind(console, '[+] Database connection: open!'))
-                .on('close', console.info.bind(console, '[+] Database connection: close!'))
+                .on('open', console.info.bind(console, '⚡ [+] Database connection: open!'))
+                .on('close', console.info.bind(console, '⚡ [+] Database connection: close!'))
         } catch (error) {
             console.error(error);
         }

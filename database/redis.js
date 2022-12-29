@@ -8,7 +8,7 @@ const client = redis.createClient({
     password: process.env.REDIS_PASSWORD || ""
 })
 
-client.on('connect', () => console.log('[+] Redis Client Connected!'))
-client.on('error', (err) => console.log('[+] Redis Client Error ', err))
+client.on('connect', () => console.log('⚡ [+] Redis Client Connected!'))
+client.on('error', (err) => console.log('⚡ [+] Redis Client Error ', err))
 
 module.exports = client
