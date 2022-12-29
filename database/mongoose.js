@@ -5,7 +5,7 @@ class Database {
     connection = mongoose.connection;
 
     constructor() {
-        
+
         try {
             this.connection
                 .on('open', console.info.bind(console, '[+] Database connection: open!'))
