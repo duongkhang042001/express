@@ -36,6 +36,10 @@ redis.connect()
 mongoose.connect()
 
 app.listen(port, () => {
+    const nDate = new Date().toLocaleString('vi-VN', {
+        timeZone: 'Asia/Ho_Chi_Minh'
+    });
+    console.log(`⚡ [+] ${nDate}`);
     console.log(`⚡ [+] NodeJS app running at localhost: ${port}!`)
 })
 
