@@ -3,20 +3,24 @@ const express = require('express')
 const logger = require('morgan')
 const fs = require('fs')
 const path = require('path')
-var expressLayouts = require('express-ejs-layouts');
+const expressLayouts = require('express-ejs-layouts');
 const redis = require('./database/redis')
 const mongoose = require("./database/mongoose")
-
+const cors = require('cors')
 const app = express()
 const port = process.env.APP_PORT || 3000
 
-app.set('view engine', 'ejs');
+app.disable('etag') 
 
-app.use(expressLayouts);
+app.set('view engine', 'ejs')
 
-app.set('views', path.join(__dirname, 'views'));
+app.use(expressLayouts)
 
-app.set('layout', './layouts/master');
+app.set('views', path.join(__dirname, 'views'))
+
+app.set('layout', './layouts/master')
+
+app.use(cors())
 
 app.use(express.static('public'))
 
