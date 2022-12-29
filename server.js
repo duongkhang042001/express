@@ -4,13 +4,14 @@ const logger = require('morgan')
 const fs = require('fs')
 const path = require('path')
 const expressLayouts = require('express-ejs-layouts');
-const redis = require('./database/redis')
-const mongoose = require("./database/mongoose")
 const cors = require('cors')
 const app = express()
 const port = process.env.APP_PORT || 3000
 
-app.disable('etag') 
+const redis = require('./database/redis')
+const mongoose = require("./database/mongoose")
+
+app.disable('etag')
 
 app.set('view engine', 'ejs')
 
