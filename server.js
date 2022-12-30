@@ -29,8 +29,6 @@ app.use(logger('combined', {
     stream: fs.createWriteStream('./logs/access.log', { flags: 'a' })
 }))
 
-app.use(logger('dev'))
-
 redis.connect()
 
 mongoose.connect()
@@ -39,8 +37,8 @@ app.listen(port, () => {
     const nDate = new Date().toLocaleString('vi-VN', {
         timeZone: 'Asia/Ho_Chi_Minh'
     });
-    console.log(`⚡ [+] ${nDate}`);
-    console.log(`⚡ [+] NodeJS app running at localhost: ${port}!`)
+    console.log(`⚡ [+] Time: ${nDate}`);
+    console.log(`⚡ [+] NodeJS app running at localhost:${port}`)
 })
 
 app.get('/', (req, res) => {
