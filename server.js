@@ -42,7 +42,13 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res) => {
-    return res.render('home/index', {
-        title: "Trang chủ"
-    })
+    return res.render('home/index')
+})
+
+app.get('/login', (req, res) => {
+    return res.render('auth/login', { layout: false })
+})
+
+app.get('/register', (req, res) => {
+    return res.render('auth/register', { layout: false })
 })
