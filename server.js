@@ -1,13 +1,11 @@
 require('dotenv').config()
 const express = require('express')
-const logger = require('morgan')
 const fs = require('fs')
 const path = require('path')
-const expressLayouts = require('express-ejs-layouts');
+const expressLayouts = require('express-ejs-layouts')
 const cors = require('cors')
 const app = express()
 const port = process.env.APP_PORT || 3000
-
 const redis = require('./database/redis')
 const mongoose = require("./database/mongoose")
 
@@ -25,19 +23,15 @@ app.use(cors())
 
 app.use(express.static('public'))
 
-app.use(logger('combined', {
-    stream: fs.createWriteStream('./logs/access.log', { flags: 'a' })
-}))
-
 redis.connect()
 
 mongoose.connect()
 
 app.listen(port, () => {
-    const nDate = new Date().toLocaleString('vi-VN', {
+    const currentDate = new Date().toLocaleString('vi-VN', {
         timeZone: 'Asia/Ho_Chi_Minh'
     });
-    console.log(`⚡ [+] Time: ${nDate}`);
+    console.log(`⚡ [+] Time: ${currentDate}`);
     console.log(`⚡ [+] NodeJS app running at localhost:${port}`)
 })
 
