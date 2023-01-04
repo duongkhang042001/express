@@ -46,3 +46,15 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
     return res.render('auth/register', { layout: false })
 })
+
+const mail = require('./helpers/mail')
+const logger = require('./helpers/logger')
+
+let i = 1;
+
+for (let i = 0; i < 20; i++) {
+    console.log("SEND", i);
+    mail().catch(err => {
+        logger.error(err)
+    })
+}
