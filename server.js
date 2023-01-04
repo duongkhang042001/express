@@ -32,7 +32,7 @@ app.listen(port, () => {
         timeZone: 'Asia/Ho_Chi_Minh'
     });
     console.log(`⚡ [+] Time: ${currentDate}`);
-    console.log(`⚡ [+] NodeJS app running at localhost:${port}`)
+    console.log(`⚡ [+] NodeJS app running at localhost:${port}!`)
 })
 
 app.get('/', (req, res) => {
